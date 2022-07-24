@@ -1,0 +1,56 @@
+﻿@model codebaseProjesi.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Product Details</h1>
+<style>
+    body {
+        background-color: black;
+    }
+
+    * {
+        color: white;
+    }
+
+    td {
+        font-weight: bold;
+    }
+
+    a {
+        color: white;
+    }
+</style>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            <a>Product Id</a>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductId)
+        </dd>
+        <dt class="col-sm-2">
+            <a>Product Name</a>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+        <dt class="col-sm-2">
+            <a>Number of Stocks</a>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductNumber)
+        </dd>
+        <dt class="col-sm-2">
+            <a>Product Price</a>
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductPrice)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
