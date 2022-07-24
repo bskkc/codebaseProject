@@ -1,0 +1,63 @@
+﻿@model IEnumerable<codebaseProjesi.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Product List</h1>
+<style>
+    body {
+        background-color:black;
+    }
+    * {
+        color: white;
+    }
+    td {
+        font-weight:bold;
+    }
+    a {
+        color: white;
+    }
+</style>
+<p>
+    <a asp-action="Create">Create New Product</a>
+</p>
+
+
+<table class="table text-center">
+    <thead >
+        <tr>
+            <th>
+                <a>Product Name</a>
+            </th>
+            <th>
+                <a>Number of Stocks</a>
+            </th>
+            <th>
+                <a>Price</a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPrice)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }, new { @class = "btn btn-primary" }) 
+                @Html.ActionLink("Details", "Details", new { id = item.ProductId }, new { @class = "btn btn-success" }) 
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductId }, new { @class = "btn btn-danger" }) 
+                @Html.ActionLink("CreateOrder", "CreateOrder", new { id = item.ProductNumber }, new { @class = "btn btn-info" }) 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
