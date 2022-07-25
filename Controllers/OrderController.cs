@@ -16,7 +16,7 @@ namespace codebaseProjesi.Controllers
         }
 
 
-        //To List Products 
+        //To List Orders 
         public IActionResult Index()
         {
             var productList = _db.CustOrders.ToList();
@@ -24,7 +24,7 @@ namespace codebaseProjesi.Controllers
         }
 
 
-        //To Edit Product 
+        //To Edit Order 
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -48,7 +48,7 @@ namespace codebaseProjesi.Controllers
         }
 
 
-        //To Delete Product 
+        //To Delete Order 
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
